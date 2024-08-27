@@ -1,0 +1,41 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/REST/getLocation_REQUEST/types" name="getLocation_REQUESTPortType" adapter="REST" wsdlLocation="getLocation_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.rest.RestAdapterConnectionFactory">
+      <property name="cloud.adapter.plugin.version" value="23.3.5"/>
+      <property name="cloud.adapter.sdk.version" value="23.3.5"/>
+      <property name="connectionUrl" value="%%KGM_HCM_REST_connectionUrl"/>
+      <property name="csfMap" value="oracle.cloud.adapter"/>
+      <property name="csfkey" value="d3d16893cb7c42d3f026777d27c25e6c9956d810669e4d482a4ca2cc58aec0e5"/>
+      <property name="privateEndpoint" value="false"/>
+      <property name="securityPolicy" value="BASIC_AUTH"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="getLocation_REQUESTPortType" operation="execute">
+    <interaction-spec className="oracle.tip.adapter.cloud.CloudInteractionSpec">
+      <property name="targetOperation" value="execute"/>
+      <property name="HTTPHeadersAdded" value="true"/>
+      <property name="HttpVerb" value="GET"/>
+      <property name="QueryParameters" value="orderBy, limit, onlyData, expand, q"/>
+      <property name="ResourceURI" value="/locationsV2"/>
+      <property name="ResponseElementNS" value="http://xmlns.oracle.com/cloud/adapter/REST/getLocation/types"/>
+      <property name="ResponseElementName" value="response-wrapper"/>
+      <property name="ResponseMediaType" value="application/json"/>
+      <property name="ResponseSample" value="{   &quot;items&quot; : [ {     &quot;LocationId&quot; : 300000283465617,     &quot;LocationCode&quot; : &quot;TESTNA010724002&quot;,     &quot;LocationName&quot; : &quot;TESTNA010724002&quot;,     &quot;EffectiveStartDate&quot; : &quot;2024-07-02&quot;,     &quot;EffectiveEndDate&quot; : &quot;4712-12-31&quot;,     &quot;ActionReasonId&quot; : null,     &quot;ActionReasonCode&quot; : null,     &quot;ActionReason&quot; : null,     &quot;ActiveStatus&quot; : &quot;A&quot;,     &quot;ActiveStatusMeaning&quot; : &quot;Active&quot;,     &quot;SetId&quot; : 0,     &quot;SetCode&quot; : &quot;COMMON&quot;,     &quot;SetName&quot; : &quot;Common Set&quot;,     &quot;EmployeeLocationFlag&quot; : true,     &quot;Description&quot; : null,     &quot;InventoryOrganizationId&quot; : null,     &quot;InventoryOrganizationName&quot; : null,     &quot;OfficialLanguageCode&quot; : null,     &quot;OfficialLanguageMeaning&quot; : null,     &quot;EmailAddress&quot; : null,     &quot;GeoHierarchyNodeCode&quot; : null,     &quot;GeoHierarchyNodeName&quot; : null,     &quot;MainPhoneCountryCode&quot; : null,     &quot;MainPhoneAreaCode&quot; : null,     &quot;MainPhoneNumber&quot; : null,     &quot;MainPhoneExtension&quot; : null,     &quot;FaxCountryCode&quot; : null,     &quot;FaxAreaCode&quot; : null,     &quot;FaxNumber&quot; : null,     &quot;FaxExtension&quot; : null,     &quot;OtherPhoneCountryCode&quot; : null,     &quot;OtherPhoneAreaCode&quot; : null,     &quot;OtherPhoneNumber&quot; : null,     &quot;OtherPhoneExtension&quot; : null,     &quot;ShipToSiteFlag&quot; : true,     &quot;ShipToLocationId&quot; : 300000283465617,     &quot;ShipToLocationCode&quot; : &quot;TESTNA010724002&quot;,     &quot;ShipToLocationName&quot; : &quot;TESTNA010724002&quot;,     &quot;OfficeSiteFlag&quot; : true,     &quot;BillToSiteFlag&quot; : true,     &quot;ReceivingSiteFlag&quot; : true,     &quot;DesignatedReceiverId&quot; : null,     &quot;DesignatedReceiverNumber&quot; : null,     &quot;DesignatedReceiverName&quot; : null,     &quot;CreatedBy&quot; : &quot;CASEY.BROWN&quot;,     &quot;CreationDate&quot; : &quot;2024-07-02T01:39:57+00:00&quot;,     &quot;LastUpdatedBy&quot; : &quot;CASEY.BROWN&quot;,     &quot;LastUpdateDate&quot; : &quot;2024-07-02T01:45:15.741+00:00&quot;,     &quot;StandardWorkingHours&quot; : null,     &quot;StandardWorkingFrequency&quot; : null,     &quot;StandardWorkingFrequencyMeaning&quot; : null,     &quot;StandardAnnualWorkingDuration&quot; : null,     &quot;AnnualWorkingDurationUnits&quot; : null,     &quot;AnnualWorkingDurationUnitsMeaning&quot; : null,     &quot;addresses&quot; : [ {       &quot;EffectiveStartDate&quot; : &quot;2024-07-02&quot;,       &quot;EffectiveEndDate&quot; : &quot;4712-12-31&quot;,       &quot;AddressLine1&quot; : &quot;TEST ADDR 002&quot;,       &quot;AddressLine2&quot; : null,       &quot;AddressLine3&quot; : null,       &quot;AddressLine4&quot; : null,       &quot;TownOrCity&quot; : &quot;Elizabethtown&quot;,       &quot;Region1&quot; : &quot;Dauphin&quot;,       &quot;Region2&quot; : &quot;PA&quot;,       &quot;Region3&quot; : null,       &quot;Country&quot; : &quot;US&quot;,       &quot;PostalCode&quot; : &quot;17022&quot;,       &quot;LongPostalCode&quot; : null,       &quot;AddlAddressAttribute1&quot; : null,       &quot;AddlAddressAttribute2&quot; : null,       &quot;AddlAddressAttribute3&quot; : null,       &quot;AddlAddressAttribute4&quot; : null,       &quot;AddlAddressAttribute5&quot; : null,       &quot;TimezoneCode&quot; : null,       &quot;Building&quot; : null,       &quot;FloorNumber&quot; : null,       &quot;CreatedBy&quot; : &quot;CASEY.BROWN&quot;,       &quot;CreationDate&quot; : &quot;2024-07-02T01:39:57.045+00:00&quot;,       &quot;LastUpdatedBy&quot; : &quot;CASEY.BROWN&quot;,       &quot;LastUpdateDate&quot; : &quot;2024-07-02T01:45:17.370+00:00&quot;,       &quot;ValidationStatusCode&quot; : null,       &quot;Provider&quot; : null,       &quot;Latitude&quot; : null,       &quot;Longitude&quot; : null,       &quot;Timezone&quot; : null,       &quot;LocAddressUsageId&quot; : 300000283465618,       &quot;AddressUsageType&quot; : &quot;MAIN&quot;,       &quot;AddressUsageTypeMeaning&quot; : &quot;Main address usage type&quot;     } ]   } ],   &quot;count&quot; : 1,   &quot;hasMore&quot; : false,   &quot;limit&quot; : 25,   &quot;offset&quot; : 0,   &quot;links&quot; : [ {     &quot;rel&quot; : &quot;self&quot;,     &quot;href&quot; : &quot;https://fa-etan-dev18-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/locationsV2&quot;,     &quot;name&quot; : &quot;locationsV2&quot;,     &quot;kind&quot; : &quot;collection&quot;   }, {     &quot;rel&quot; : &quot;action&quot;,     &quot;href&quot; : &quot;https://fa-etan-dev18-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/locationsV2/action/splitLocationForChildUpdate&quot;,     &quot;name&quot; : &quot;splitLocationForChildUpdate&quot;,     &quot;kind&quot; : &quot;other&quot;   }, {     &quot;rel&quot; : &quot;action&quot;,     &quot;href&quot; : &quot;https://fa-etan-dev18-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/locationsV2/action/getReloadedEFFData&quot;,     &quot;name&quot; : &quot;getReloadedEFFData&quot;,     &quot;kind&quot; : &quot;other&quot;   } ] }"/>
+      <property name="allowChangeDefaultNamespace" value="false"/>
+      <property name="copyFaultFromModel" value="true"/>
+      <property name="forceWsdlTypesBuild" value="true"/>
+      <property name="generateConnectivityPropertiesOutboundRequest" value="RESTOUTREQ"/>
+      <property name="generateConnectivityPropertiesOutboundResponse" value="RESTOUTRES"/>
+      <property name="generatePartnerLink" value="false"/>
+      <property name="integrationSchemaNamespace" value="http://xmlns.oracle.com/cloud/adapter/REST/getLocation_REQUEST/types"/>
+      <property name="integrationWSDLNamespace" value="http://xmlns.oracle.com/cloud/adapter/REST/getLocation_REQUEST"/>
+      <property name="interactionSpecClass" value="oracle.tip.adapter.cloud.CloudInteractionSpec"/>
+      <property name="invocationStyle" value="REQUEST_RESPONSE"/>
+      <property name="isResponseJsonSchema" value="false"/>
+      <property name="isResponseRawBytes" value="false"/>
+      <property name="operations" value="default"/>
+      <property name="postQueryParamsAsContent" value="false"/>
+      <property name="responseJsonTopLevelArray" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>
